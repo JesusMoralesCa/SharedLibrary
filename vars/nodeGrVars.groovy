@@ -11,4 +11,6 @@ def build(){
   //sh "docker.build("${env.NODEIMAGE}:latest", "./DockerF")"
   //sh "docker build -t ${env.NODEIMAGE}:ImageNode"
   //sh "docker run -d -p 3000:3000 ImageNode"
+  sh "docker build -t ${env.NODEIMAGE}:ImageNode -f ProyectoJavaNode/DockerF/Dockerfile ."
+
 }
