@@ -9,7 +9,7 @@ def test(){
 
 
 def setProperties() {
-    def props = readProperties file: 'java.properties'
+    def props2 = readProperties file: 'node.properties'
     env.NODEIMAGE = props['imageNode']
     sh "echo se ha hecho ${env.NODEIMAGE}"
 }
