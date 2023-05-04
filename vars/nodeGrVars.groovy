@@ -10,7 +10,7 @@ def test(){
 
 def setProperties() {
     def props2 = readProperties file: 'node.properties'
-    env.NODEIMAGE = props['imageNode']
+    env.NODEIMAGE = props2['imageNode']
     sh "echo se ha hecho ${env.NODEIMAGE}"
 }
 
