@@ -9,5 +9,8 @@ def build(){
   sh "echo se ha hecho ${env.NODEIMAGE}"
   sh "docker pull ${env.NODEIMAGE}"
   sh "docker build -t ${env.NODEIMAGE}:ImageNode -f DockerF/Dockerfile ."
+  
+  sh "nodeGrVars.test()"
+  
   //sh "docker run -d -p 3000:3000 ImageNode"
 }
