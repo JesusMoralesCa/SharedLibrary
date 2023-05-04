@@ -5,7 +5,7 @@ def test(){
 
 
 //////////////////////BUILD///////////////////
-def build{
+def build(){
   def file = readProperties file: 'project.properties'
   if (file['tecnology'] == 'java'){
     buildJava()
