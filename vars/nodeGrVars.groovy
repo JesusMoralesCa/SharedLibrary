@@ -10,7 +10,7 @@ def build(){
   sh "docker pull ${env.NODEIMAGE}"
   sh "docker build -t ${env.NODEIMAGE}:ImageNode -f DockerF/Dockerfile ."
   
-  sh "nodeGrVars.test()"
+  test()
   
   //sh "docker run -d -p 3000:3000 ImageNode"
 }
