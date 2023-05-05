@@ -34,7 +34,7 @@ def buildJava(){
   env.JAVAIMAGE = props['imageJava']
   sh "echo se ha hecho ${env.JAVAIMAGE}"
   sh "docker pull ${env.JAVAIMAGE}"
-  sh "docker build -t ${env.NODEIMAGE}:ImageJava -f DockerJ/Java/Dockerfile ."
+  sh "docker build -t ${env.NODEIMAGE}:ImageJava -f DockerF/Java/Dockerfile ."
 }
 
 
