@@ -24,7 +24,7 @@ def buildNode(){
   env.NODEIMAGE = props2['imageNode']
   sh "echo se ha hecho ${env.NODEIMAGE}"
   sh "docker pull ${env.NODEIMAGE}"
-  sh "docker build -t ${env.NODEIMAGE}:ImageNode -f DockerF/Dockerfile ."
+  sh "docker build -t ${env.NODEIMAGE}:ImageNode -f DockerF/Node/Dockerfile ."
   //sh "docker run -d -p 3000:3000 ImageNode"
 }
 
@@ -34,7 +34,7 @@ def buildJava(){
   env.JAVAIMAGE = props['imageJava']
   sh "echo se ha hecho ${env.JAVAIMAGE}"
   sh "docker pull ${env.JAVAIMAGE}"
-  sh "docker build -t ${env.NODEIMAGE}:ImageJava -f DockerJ/Dockerfile ."
+  sh "docker build -t ${env.NODEIMAGE}:ImageJava -f DockerJ/Java/Dockerfile ."
 }
 
 
