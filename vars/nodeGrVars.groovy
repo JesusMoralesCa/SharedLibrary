@@ -38,7 +38,6 @@ def build2Node(){
   sh "docker build -t jesusmoralesc/docker-nodejs ."
   login()
   //sh "docker run --name DockerNodeJsApp -p 4000:3000 docker-nodejs"
-  //testJest()
 }
 
 def login(){
