@@ -30,8 +30,7 @@ def checkoutNode(){
 
 def installs(){
   sh "npm install"
-  sh "npm build"
-  sh "sh package"
+  testJest()
 }
 
 def build2Node(){
