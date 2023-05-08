@@ -42,7 +42,11 @@ def build2Node(){
 }
 
 def login(){
-  sh "docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin"
+  
+  withCredentials([string(credentialsId: 'dockerhub-pwd', variable: 'dockerhubpwd')]) {
+    sh "docker login -u jesusmoralesc -p ${dockerhubpwd}"
+}
+  
   push()
 }
 
