@@ -41,7 +41,7 @@ def build2Node(){
 
 def testJest(){
   sh "npm install --save jest"
-  sh "node NODE_OPTIONS=--experimental-vm-modules npx jest"
+  sh "set NODE_OPTIONS=--experimental-vm-modules && npx jest"
 }
 
 
