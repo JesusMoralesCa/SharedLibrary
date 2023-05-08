@@ -11,7 +11,7 @@ def build(){
     buildJava()
     
   }else if (file['tecnology'] == 'node'){
-    build2Node()
+    checkoutNode()
   
   }
 }
