@@ -24,7 +24,7 @@ def build(){
 ////BuildNode
 
 def checkoutNode(){
-  sh "checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/JesusMoralesCa/BuildNode.git']])"
+  checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/JesusMoralesCa/BuildNode.git']])
   build2Node()
 }
 
