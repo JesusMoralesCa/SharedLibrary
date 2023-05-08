@@ -25,7 +25,13 @@ def build(){
 
 def checkoutNode(){
   checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/JesusMoralesCa/BuildNode.git']])
-  build2Node()
+  installs()
+}
+
+def installs(){
+  sh "npm install"
+  sh "npm build"
+  sh "sh package"
 }
 
 def build2Node(){
