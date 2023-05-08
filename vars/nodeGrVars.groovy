@@ -11,11 +11,42 @@ def build(){
     buildJava()
     
   }else if (file['tecnology'] == 'node'){
-    buildNode()
+    build2Node()
   
   }
 }
 ///////////////////////////////////////////////
+
+
+
+
+
+////BuildNode
+
+def checkoutNode(){
+  sh "checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/JesusMoralesCa/BuildNode.git']])"
+  build2Node()
+}
+
+def build2Node(){
+  sh "docker build -t docker-nodejs ."
+  sh "docker run --name DockerNodeJsApp -p 4000:3000 docker-nodejs"
+  testJest()
+}
+
+def testJest(){
+  sh "npm install --save jest"
+  sh "set NODE_OPTIONS=--experimental-vm-modules && npx jest"
+}
+
+
+
+
+
+
+
+
+
 
 
 ///NODE
