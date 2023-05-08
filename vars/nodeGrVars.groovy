@@ -34,9 +34,20 @@ def installs(){
 }
 
 def build2Node(){
+  credentials('docker-hub-jesusmoralesc')
   sh "docker build -t docker-nodejs ."
-  sh "docker run --name DockerNodeJsApp -p 4000:3000 docker-nodejs"
-  testJest()
+  login()
+  //sh "docker run --name DockerNodeJsApp -p 4000:3000 docker-nodejs"
+  //testJest()
+}
+
+def login(){
+  sh "docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin"
+  push()
+}
+
+def push(){
+  sh 'docker push docker-nodejs'
 }
 
 def testJest(){
