@@ -42,12 +42,8 @@ def build2Node(){
 }
 
 def login(){
-  
-  withCredentials([string(credentialsId: 'dockerhub-pwd', variable: 'dockerhubpwd')]) {
     sh "docker login -u jesusmoralesc -p ${dockerhubpwd}"
-}
-  
-  push()
+    push()
 }
 
 def push(){
