@@ -2,10 +2,10 @@
 def call(){
   def file = readProperties file: 'project.properties'
   if (file['tecnology'] == 'java'){
-    Java()
+    buildJava()
     
   }else if (file['tecnology'] == 'node'){
-    Node()
+    buildNode()
   
   }
 }
