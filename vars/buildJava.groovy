@@ -11,7 +11,7 @@ def packageMVN(){
 
 def testMVN(){
   sh "mvn test"
-  build2Java()
+  deploy()
 }
 
 def build2Java(){
