@@ -1,4 +1,4 @@
-def checkoutJava(){
+def call(){
   checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/JesusMoralesCa/TareaMaven.git']])
   package()
 }
@@ -27,3 +27,5 @@ def login(){
 def push(){
   sh 'docker push jesusmoralesc/docker-javaMVN'
 }
+
+return this
