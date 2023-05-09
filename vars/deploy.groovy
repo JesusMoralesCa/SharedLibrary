@@ -1,6 +1,4 @@
 def call(){
-  def file = readProperties file: 'project.properties'
-  env.image = file['imageName']
   credentials('docker-hub-jesusmoralesc')
   sh "docker build -t jesusmoralesc/docker-${env.image} ."
   login()
