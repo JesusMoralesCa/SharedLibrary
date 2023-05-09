@@ -16,7 +16,7 @@ def testMVN(){
 
 def build2Java(){
   credentials('docker-hub-jesusmoralesc')
-  sh "docker build -t jesusmoralesc/docker-javaMVN ."
+  sh "docker build -t jesusmoralesc/docker-javamvn ."
   login()
 }
 
