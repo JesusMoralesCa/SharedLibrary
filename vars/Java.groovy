@@ -1,6 +1,6 @@
 def call(){
   checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/JesusMoralesCa/TareaMaven.git']])
-  package()
+  packageMVN()
 }
 
 def packageMVN(){
@@ -10,7 +10,7 @@ def packageMVN(){
 
 def testMVN(){
   sh "mvn test"
-  
+  build2Java()
 }
 
 def build2Java(){
