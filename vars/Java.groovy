@@ -26,7 +26,7 @@ def login(){
 }
 
 def push(){
-  sh 'docker push jesusmoralesc/docker-javaMVN'
+  sh 'docker push jesusmoralesc/docker-javamvn'
 }
 
 return this
