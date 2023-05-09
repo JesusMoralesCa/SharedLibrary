@@ -16,21 +16,5 @@ def testJest(){
   build2Node()
 }
 
-def build2Node(){
-  credentials('docker-hub-jesusmoralesc')
-  sh "docker build -t jesusmoralesc/docker-nodejs ."
-  login()
-  //sh "docker run --name DockerNodeJsApp -p 4000:3000 docker-nodejs"
-}
-
-def login(){
-     sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
-    push()
-}
-
-def push(){
-  sh 'docker push jesusmoralesc/docker-nodejs'
-}
-
 return this
 ///////////////////////////////////////////////////////
