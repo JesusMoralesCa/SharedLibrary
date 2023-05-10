@@ -1,6 +1,5 @@
 def call(){
   sh "npm install"
-  testJest()
 }
 
 return this
