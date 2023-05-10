@@ -1,5 +1,5 @@
 def call(){
-  sh "docker push jesusmoralesc/docker-${file['imageName']}"
+  sh "docker push jesusmoralesc/docker-${env.image}"
 }
 
 return this
