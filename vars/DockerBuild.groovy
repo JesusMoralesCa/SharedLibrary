@@ -1,6 +1,6 @@
 def call(){
   credentials('docker-hub-jesusmoralesc')
-  sh "docker build -t jesusmoralesc/docker-${file['imageName']} ."
+  sh "docker build -t jesusmoralesc/docker-${env.image} ."
 }
 
 return this
