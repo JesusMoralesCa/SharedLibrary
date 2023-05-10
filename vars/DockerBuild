@@ -1,0 +1,5 @@
+def call(){
+  sh "docker build -t jesusmoralesc/docker-${env.image} ."
+}
+
+return this
