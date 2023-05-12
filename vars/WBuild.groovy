@@ -7,7 +7,7 @@ def call(){
                 stage(stageConfig.stage) {
                     steps {
                         script {
-                            // Agrega aquí los pasos específicos para cada stage
+                            sh "echo hola"
                             echo "Ejecutando ${stageConfig.stage}"
                         }
                     }
