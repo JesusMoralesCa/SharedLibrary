@@ -4,7 +4,7 @@ def call(){
   if (file['tecnology'] == 'java'){
          def yaml = readFile('Java/pipeline.yaml')
          def pipeline = readYaml(yaml)
-         build pipeline
+         build 'pipeline'
 
 
   }else if (file['tecnology'] == 'node'){
