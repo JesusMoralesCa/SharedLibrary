@@ -5,12 +5,7 @@ def call(){
             def pipelineConfig = readYaml file: 'Java/pipeline.yaml'
             pipelineConfig.stages.each { stageConfig ->
                 stage(stageConfig.stage) {
-                    steps {
-                        script {
-                            sh "echo hola"
-                            echo "Ejecutando ${stageConfig.stage}"
-                        }
-                    }
+
                 }
             }
          
