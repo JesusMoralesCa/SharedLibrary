@@ -6,7 +6,7 @@ def call(){
           for (stageConfig in pipelineConfig.stages) {
             stage(stageConfig.stage) {
               steps {
-                for (stepsConfig in pipelineConfig.steps) {
+                for (stageConfig in pipelineConfig.steps) {
 
                 }
               }
