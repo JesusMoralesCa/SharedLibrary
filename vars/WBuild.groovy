@@ -1,3 +1,4 @@
+import org.foo.BuildJava
 
 def call() {
     def file = readProperties file: 'project.properties'
