@@ -1,5 +1,3 @@
-import org.foo.BuildJava
-
 def call() {
     def file = readProperties file: 'project.properties'
     checkout scmGit(branches: [[name: '*/test']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/JesusMoralesCa/pipeline-template.git']])
