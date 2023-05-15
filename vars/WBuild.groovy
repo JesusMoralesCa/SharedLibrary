@@ -3,13 +3,13 @@ def call(){
   checkout scmGit(branches: [[name: '*/test']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/JesusMoralesCa/pipeline-template.git']])
   if (file['tecnology'] == 'java'){
             def pipelineConfig = readYaml file: 'Java/pipeline.yaml'
-            pipelineConfig.stages.each { stageConfig ->
-                stage(stageConfig.stage) {
+      for (stageConfig in pipelineConfig.stages) {
+            stage(stageConfig.stage) {
 
-                }
-            }
+        }
+      }
          
-
+  
 
 
   }else if (file['tecnology'] == 'node'){
