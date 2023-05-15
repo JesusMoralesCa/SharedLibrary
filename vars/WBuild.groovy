@@ -9,9 +9,11 @@ def call(){
             def stageName = stageConfig.stage
             stage(stageName) {
               for (stepName in stageConfig.steps) {
-                        def stepClass = Class.forName(stepName)
-                        def stepInstance = stepClass.newInstance()
-                        stepInstance.run()
+                        //def stepClass = Class.forName(stepName)
+                        //def stepInstance = stepClass.newInstance()
+                        def build = new BuildJava()
+                        //stepInstance.run()
+                        build.stepname()
               }
             }
           }
