@@ -7,8 +7,9 @@ def call(){
             def stageName = stageConfig.stage
             stage(stageName) {
               for (stepName in stageConfig.steps) {
-                // Realizar acciones con el nombre del paso, por ejemplo:
-                "${stepName}"()
+                        def stepClass = Class.forName(stepName)
+                        def stepInstance = stepClass.newInstance()
+                        stepInstance.run()
               }
             }
           }
