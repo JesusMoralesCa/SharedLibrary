@@ -7,13 +7,9 @@ def call(){
     if (file['technology'] == 'java') {
         def pipelineConfig = readYaml file: 'Java/pipeline.yaml'
         
-        for (stageConfig in pipelineConfig.stages) {
-            def stageName = stageConfig.stage
-            stage(stageName) {
-                for (stepName in stageConfig.steps) {
-                    //def build = new BuildJava()
-                    //build."${stepName}"()
-                    //echo "Ejecutando paso: ${stepName}"
+    for (stageConfig in pipelineConfig.stages) {
+            stage(stageConfig.stage) {
+                
                 }
             }
         }
