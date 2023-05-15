@@ -1,4 +1,4 @@
-import org.foo.*
+//import org.foo.*
 
 def call() {
     def file = readProperties file: 'project.properties'
@@ -12,8 +12,8 @@ def call() {
             stage(stageName) {
                 for (stepName in stageConfig.steps) {
                     //def build = new BuildJava()
-                    build."${stepName}"()
-                    echo "Ejecutando paso: ${stepName}"
+                    //build."${stepName}"()
+                    //echo "Ejecutando paso: ${stepName}"
                 }
             }
         }
