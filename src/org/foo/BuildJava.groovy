@@ -1,6 +1,6 @@
 package org.foo
 
-class Build {
+class BuildJava {
   
   def srcCheckout(){
     checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/JesusMoralesCa/BuildMaven.git']])
