@@ -5,6 +5,9 @@ def call(){
       def pipelineConfig = readYaml file: 'Java/pipeline.yaml'
       for (stageConfig in pipelineConfig.stages) {
             stage(stageConfig.stage) {
+              for (stageConfig in pipelineConfig.stages){
+                steps(stageConfig.steps){}
+              }
 
         }
       }
