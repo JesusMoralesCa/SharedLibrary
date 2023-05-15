@@ -10,7 +10,6 @@ def call(){
     for (stageConfig in pipelineConfig.stages) {
             stage(stageConfig.stage) {
                 
-                }
             }
         }
     } else if (file['technology'] == 'node') {
