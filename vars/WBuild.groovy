@@ -13,6 +13,7 @@ def call() {
                 for (stepName in stageConfig.steps) {
                     def build = new BuildJava()
                     build.stepName()
+                    echo "Ejecutando paso: ${stepName}"
                 }
             }
         }
