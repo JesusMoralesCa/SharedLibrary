@@ -13,7 +13,7 @@ def call(){
 
 
   }else if (file['tecnology'] == 'node'){
-      def pipelineConfig = readYaml file: 'Java/pipeline.yaml'
+      def pipelineConfig = readYaml file: 'Node/pipeline.yaml'
       for (stageConfig in pipelineConfig.stages) {
             stage(stageConfig.stage) {
 
