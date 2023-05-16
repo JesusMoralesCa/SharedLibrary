@@ -15,7 +15,7 @@ def call() {
                     //def stepClass = Class.forName(stepName)
                     //def build = stepClass.newInstance()
                     def build = new srcCheckout()
-                    build.execute()
+                    build.run()
                     echo "Se ha ejecutado paso: ${stepName}"
                 }
             }
