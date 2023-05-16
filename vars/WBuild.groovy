@@ -1,4 +1,4 @@
-import org.foo.srcCheckout
+import org.foo.*
     
 def call() {
 
