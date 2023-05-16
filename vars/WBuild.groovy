@@ -13,17 +13,16 @@ def call() {
             def stageName = stageConfig.stage
             stage(stageName) {
              
-                step('Paso'){
-                             for (stepName in stageConfig.steps) {
-                            //def stepClass = Class.forName(stepName)
-                            //def build = stepClass.newInstance()
-                            def build = new srcMavenCleanPackage()
-                            build.run()
-                            echo "Se ha ejecutado paso: ${stepName}"
-                    
-                    
+                    steps {
+                        script {
+                            for (stepName in stageConfig.steps) {
+                                def build = new srcMavenCleanPackage()
+                                build.run()
+                                echo "Se ha ejecutado paso: ${stepName}"
+                            }
+                        }
                     }
-                }
+                
             }
         }
     } else if (file['tecnology'] == 'node') {
