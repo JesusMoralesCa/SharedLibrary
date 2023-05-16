@@ -2,7 +2,7 @@ package org.foo
 
 import jenkins.model.Jenkins
 
-class SrcMavenCleanPackage {
+class srcMavenCleanPackage {
     def script = "mvn -B -DskipTests clean package"
 
     void cleanPackage() {
