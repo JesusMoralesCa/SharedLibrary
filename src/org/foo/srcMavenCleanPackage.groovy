@@ -4,19 +4,14 @@ class srcMavenCleanPackage {
     
     String script = "sh mvn -B -DskipTests clean package"
     
-    void cleanPackage() {
-      def process = script.execute()
-        process.waitFor()
-        
-        if (process.exitValue() == 0) {
-            println "El comando se ejecutó correctamente."
-        } else {
-            println "Error al ejecutar el comando."
-        }
-    }
+  
     
     void run() {
         cleanPackage()
     }
 }
 
+
+  void cleanPackage() {
+      sh "mvn -B -DskipTests clean package"
+    }
