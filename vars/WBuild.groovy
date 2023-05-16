@@ -10,7 +10,7 @@ def call() {
             def stageName = stageConfig.stage
             stage(stageName) {
                 for (stepName in stageConfig.steps) {
-                    //def build = new BuildJava()
+                    def build = new BuildJava()
                     build."${stepName}"()
                     echo "Ejecutando paso: ${stepName}"
                 }
