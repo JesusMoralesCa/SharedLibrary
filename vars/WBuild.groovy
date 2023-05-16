@@ -8,13 +8,13 @@ def call() {
     if (file['tecnology'] == 'java') {
 
         def pipelineConfig = readYaml file: 'Java/pipeline.yaml'
+        checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/JesusMoralesCa/BuildMaven.git']])
         for (stageConfig in pipelineConfig.stages) {
             def stageName = stageConfig.stage
             stage(stageName) {
                 for (stepName in stageConfig.steps) {
-                    //def stepClass = Class.forName(stepName)
-                    //def build = stepClass.newInstance()
-                    def build = new srcCheckout()
+                    def stepClass = Class.forName(stepName)
+                    def build = stepClass.newInstance()
                     build.run()
                     echo "Se ha ejecutado paso: ${stepName}"
                 }
