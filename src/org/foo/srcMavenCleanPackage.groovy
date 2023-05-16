@@ -2,11 +2,10 @@ package org.foo
 
 class srcMavenCleanPackage {
     
-    String script = "mvn -B -DskipTests clean package"
-    def sh
-    
+    def script = "mvn -B -DskipTests clean package"
+
     void cleanPackage() {
-        sh(script)
+        script.sh
     }
     
     void run() {
