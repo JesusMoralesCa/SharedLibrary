@@ -17,9 +17,9 @@ def call() {
                 
                         script {
                             for (stepName in stageConfig.steps) {
-                                def stepClass = Class.forName(stepName)
-                                def build = stepClass.newInstance()
-                                //def build = new srcMavenCleanPackage()
+                                //def stepClass = Class.forName(stepName)
+                                //def build = stepClass.newInstance()
+                                def build = new stepName
                                 build.script()
                                 echo "Se ha ejecutado paso: ${stepName}"
                             }
