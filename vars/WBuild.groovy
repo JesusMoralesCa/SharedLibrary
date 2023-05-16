@@ -18,8 +18,7 @@ def call() {
                         script {
                             for (stepName in stageConfig.steps) {
                                 def build = new srcMavenCleanPackage()
-                                build.sh = sh
-                                build.run()
+                                build.script()
                                 echo "Se ha ejecutado paso: ${stepName}"
                             }
                         }
