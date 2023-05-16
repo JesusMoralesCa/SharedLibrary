@@ -1,10 +1,13 @@
 package org.foo
 
 class srcCheckout {
+    void echo(){
+        "echo hola"
+    }
+    
+    
     void run() {
-        script{
-            sh "echo si"
-        }
+       echo()
     }
 }
 
