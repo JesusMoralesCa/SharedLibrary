@@ -6,7 +6,7 @@ class srcMavenCleanPackage {
     Sh sh
     
     void CleanPackage(){
-     return script
+     return script.sh
     }
     
     
