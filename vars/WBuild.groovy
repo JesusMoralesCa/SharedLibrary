@@ -12,9 +12,9 @@ def call() {
         for (stageConfig in pipelineConfig.stages) {
             def stageName = stageConfig.stage
             stage(stageName) {
-             for (stepName in stageConfig.steps) {
-                step(stepName){
-                       
+             
+                step('Paso'){
+                             for (stepName in stageConfig.steps) {
                             //def stepClass = Class.forName(stepName)
                             //def build = stepClass.newInstance()
                             def build = new srcMavenCleanPackage()
