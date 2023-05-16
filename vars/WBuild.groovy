@@ -1,12 +1,11 @@
 def call() {
-    
-    
+
     def file = readProperties file: 'project.properties'
-    sh "echo se esta haciendo"
+    checkout scmGit(branches: [[name: '*/test']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/JesusMoralesCa/pipeline-template.git']])
+    
     if (file['tecnology'] == 'java') {
-        checkout scmGit(branches: [[name: '*/test']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/JesusMoralesCa/pipeline-template.git']])
+
         def pipelineConfig = readYaml file: 'Java/pipeline.yaml'
-        sh "echo se esta haciendo2"
         for (stageConfig in pipelineConfig.stages) {
             def stageName = stageConfig.stage
             stage(stageName) {
