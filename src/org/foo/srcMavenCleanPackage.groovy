@@ -2,7 +2,7 @@ package org.foo
 
 class srcMavenCleanPackage {
     
-    String script = "mvn -B -DskipTests clean package"
+    String script = "sh mvn -B -DskipTests clean package"
     
     void cleanPackage() {
         script.execute()
