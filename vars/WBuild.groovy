@@ -15,7 +15,7 @@ def call() {
                     def stepClass = Class.forName(stepName)
                     def build = stepClass.newInstance()
                     build.execute()
-                    echo "Ejecutando paso: ${stepName}"
+                    echo "Se ha ejecutado paso: ${stepName}"
                 }
             }
         }
