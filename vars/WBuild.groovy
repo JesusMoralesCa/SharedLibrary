@@ -1,5 +1,5 @@
 import org.foo.*
-import jenkins.tasks.SimpleBuildStep
+//import jenkins.tasks.SimpleBuildStep
     
 def call() {
 
@@ -14,7 +14,7 @@ def call() {
             def stageName = stageConfig.stage
             stage(stageName) {
              
-                    step {
+                
                         script {
                             for (stepName in stageConfig.steps) {
                                 def build = new srcMavenCleanPackage()
@@ -22,7 +22,7 @@ def call() {
                                 echo "Se ha ejecutado paso: ${stepName}"
                             }
                         }
-                    }
+                    
                 
             }
         }
