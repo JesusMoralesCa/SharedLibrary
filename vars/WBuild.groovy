@@ -2,8 +2,9 @@ def call() {
     def file = readProperties file: 'project.properties'
     
     if (file['technology'] == 'java') {
-        def pipelineConfig = readYaml file: 'Java/pipeline.yaml'
         checkout scmGit(branches: [[name: '*/test']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/JesusMoralesCa/pipeline-template.git']])
+        def pipelineConfig = readYaml file: 'Java/pipeline.yaml'
+        
         for (stageConfig in pipelineConfig.stages) {
             def stageName = stageConfig.stage
             stage(stageName) {
