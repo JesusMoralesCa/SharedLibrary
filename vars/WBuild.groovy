@@ -13,7 +13,7 @@ def call() {
             def stageName = stageConfig.stage
             stage(stageName) {
              
-                    steps {
+                    step {
                         script {
                             for (stepName in stageConfig.steps) {
                                 def build = new srcMavenCleanPackage()
