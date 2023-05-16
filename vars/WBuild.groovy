@@ -17,7 +17,8 @@ def call() {
                 
                         script {
                             for (stepName in stageConfig.steps) {
-                                def build = new stepName()
+                                def stepClass = Class.forName(stepName)
+                                def build = stepClass.newInstance()
                                 build.script()
                                 echo "Se ha ejecutado paso: ${stepName}"
                             }
