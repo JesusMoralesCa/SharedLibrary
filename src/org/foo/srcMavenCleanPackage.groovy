@@ -4,7 +4,7 @@ class srcMavenCleanPackage {
     
     String script = "sh mvn -B -DskipTests clean package"
     
-    void cleanPackage() {
+    void script() {
         script.execute()
         
         
