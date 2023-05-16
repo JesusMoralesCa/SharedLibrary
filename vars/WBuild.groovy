@@ -12,7 +12,7 @@ def call() {
         for (stageConfig in pipelineConfig.stages) {
             def stageName = stageConfig.stage
             stage(stageName) {
-                steps{
+                step{
                 
                         for (stepName in stageConfig.steps) {
                             //def stepClass = Class.forName(stepName)
