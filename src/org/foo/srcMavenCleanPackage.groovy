@@ -1,16 +1,18 @@
 package org.foo
 
-class srcMavenCleanPackage {
-    
-    script = "mvn -B -DskipTests clean package"
-    Sh sh
-    
-    void CleanPackage(){
-     return script.sh
+import jenkins.model.Jenkins
+
+class SrcMavenCleanPackage {
+    def script = "mvn -B -DskipTests clean package"
+
+    void cleanPackage() {
+        def sh = Jenkins.instance.createLauncher(null).launch()
+        sh.writeLine(script)
+        sh.waitForOrKill(10000)
     }
-    
-    
+
     void run() {
-       CleanPackage()
+        cleanPackage()
     }
 }
+
