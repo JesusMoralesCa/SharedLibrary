@@ -5,8 +5,8 @@ class srcMavenCleanPackage {
     String script = "mvn -B -DskipTests clean package"
     
     void cleanPackage() {
-        def process = script.execute()
-        process.waitFor()
+        script.execute()
+        
         
     }
     
