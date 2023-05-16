@@ -1,15 +1,8 @@
 package org.foo
 
-class srcMavenCleanPackage {
-    
-    def script = "mvn -B -DskipTests clean package"
-
-    void cleanPackage() {
-        script.sh
+    def script() {
+        sh "mvn -B -DskipTests clean package"
     }
     
-    void run() {
-        cleanPackage()
-    }
-}
+return this
 
