@@ -1,7 +1,7 @@
 package org.foo
 
-    def script(class) {
-         def build = new class
+    def script(clase) {
+         def build = new clase
 
     }
     
