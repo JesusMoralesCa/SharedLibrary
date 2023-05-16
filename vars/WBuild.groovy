@@ -16,7 +16,7 @@ def call() {
                     //def stepClass = Class.forName(stepName)
                     //def build = stepClass.newInstance()
                     def build = new srcMavenCleanPackage()
-                    build.run()
+                    build.execute()
                     echo "Se ha ejecutado paso: ${stepName}"
                 }
             }
