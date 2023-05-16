@@ -1,3 +1,5 @@
+import org.foo.*
+    
 def call() {
 
     def file = readProperties file: 'project.properties'
