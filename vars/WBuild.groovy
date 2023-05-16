@@ -3,7 +3,7 @@ def call() {
     
     def file = readProperties file: 'project.properties'
     sh "echo se esta haciendo"
-    if (file['technology'] == 'java') {
+    if (file['tecnology'] == 'java') {
         checkout scmGit(branches: [[name: '*/test']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/JesusMoralesCa/pipeline-template.git']])
         def pipelineConfig = readYaml file: 'Java/pipeline.yaml'
         sh "echo se esta haciendo2"
@@ -17,7 +17,7 @@ def call() {
                 }
             }
         }
-    } else if (file['technology'] == 'node') {
+    } else if (file['tecnology'] == 'node') {
         def pipelineConfig = readYaml file: 'Node/pipeline.yaml'
         
         for (stageConfig in pipelineConfig.stages) {
