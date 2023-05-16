@@ -13,7 +13,7 @@ def call() {
             stage(stageName) {
                 for (stepName in stageConfig.steps) {
                     def build = new "${stepName}"
-                    build.run
+                    build.execute
                     echo "Ejecutando paso: ${stepName}"
                 }
             }
