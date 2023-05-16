@@ -12,12 +12,17 @@ def call() {
         for (stageConfig in pipelineConfig.stages) {
             def stageName = stageConfig.stage
             stage(stageName) {
-                for (stepName in stageConfig.steps) {
-                    //def stepClass = Class.forName(stepName)
-                    //def build = stepClass.newInstance()
-                    def build = new srcMavenCleanPackage()
-                    build.run()
-                    echo "Se ha ejecutado paso: ${stepName}"
+                steps{
+                
+                        for (stepName in stageConfig.steps) {
+                            //def stepClass = Class.forName(stepName)
+                            //def build = stepClass.newInstance()
+                            def build = new srcMavenCleanPackage()
+                            build.run()
+                            echo "Se ha ejecutado paso: ${stepName}"
+                    
+                    
+                    }
                 }
             }
         }
