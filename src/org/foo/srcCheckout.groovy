@@ -2,7 +2,9 @@ package org.foo
 
 class srcCheckout {
     void run() {
-        sh "echo si"
+        script{
+            sh "echo si"
+        }
     }
 }
 
