@@ -11,10 +11,10 @@ def call() {
         def pipelineConfig = readYaml file: 'Java/pipeline.yaml'
         checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/JesusMoralesCa/BuildMaven.git']])
             for (stageConfig in pipelineConfig.stages) {
-                def stageName = stageConfig.stage
-                def stepName = stageConfig.steps
+                def stageName = stageConfig.stage.toString()
+                def stepName = stageConfig.steps.toString()
                 def build = new Stage()
-                build.run(stageName.toString(), stepName.toString())
+                build.run(stageName, stepName)
             }
     } else if (file['tecnology'] == 'node') {
         def pipelineConfig = readYaml file: 'Node/pipeline.yaml'
