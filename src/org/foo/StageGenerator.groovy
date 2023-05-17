@@ -1,5 +1,4 @@
 package org.foo
-import groovy.yaml.Yaml
 
 class StageGenerator {
   def generateStages(config) {
