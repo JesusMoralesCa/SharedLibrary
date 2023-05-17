@@ -2,7 +2,7 @@ package org.foo
 
 class StageGenerator {
   static generateStages(config) {
-    def stage = []
+    def stages = []
     
     
       for (stageConfig in config.stages) {
