@@ -22,7 +22,7 @@ class StageGenerator {
         executeStep(step)
       }
     }
-  }
+  
 
   static executeStep(step) {
     // Implementar la lógica para ejecutar el paso específico
