@@ -17,11 +17,8 @@ class StageGenerator {
   }
 
   static createStage(stageName, steps) {
-    return { context, logger ->
-      logger.info("Running stage: $stageName")
-
       steps.each { step ->
-        // Ejecutar el paso específico de la etapa
+        step
         executeStep(step)
       }
     }
