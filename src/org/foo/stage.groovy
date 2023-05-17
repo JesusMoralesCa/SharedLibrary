@@ -1,20 +1,18 @@
 package org.foo
 
-class stage {
-    
-    def stage(string stageName, string fun){
+class Stage {
 
-        stage(stageName){
-            steps{
-                script{
-                    fun
+    def createStage(String stageName, String functionName) {
+        stage(stageName) {
+            steps {
+                script {
+                    functionName
                 }
             }
         }
     }
 
-        
-    void run(stageName,fun) {
-       return stage(stageName,fun)
+    def run(String stageName, String functionName) {
+        createStage(stageName, functionName)
     }
 }
