@@ -14,7 +14,13 @@ class Stage {
         }
     }
 
-    void run(String stageName, Closure fun) {
-        createStage(stageName, fun)
+    void run(String stageName, String stepCode) {
+        createStage(stageName) {
+            steps {
+                script {
+                    evaluate(stepCode)
+                }
+            }
+        }
     }
 }
