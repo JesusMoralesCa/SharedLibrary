@@ -1,6 +1,6 @@
 package org.foo
 
-class StageGenerator {
+
   def generateStages(config) {
         
         def stages = config.stages
@@ -17,6 +17,6 @@ class StageGenerator {
             }
         }
   }
-}
+
 
 return this
