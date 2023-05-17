@@ -9,9 +9,10 @@ class StageGenerator {
       def steps = stageConfig.steps
 
       def stage = stage(stageName) {
-        script{
-          for(steps in stageName){
-            steps
+        script {
+          steps.each { step ->
+            // Llamar a la función según el nombre del paso
+            this."$step"()
           }
         }
       }
