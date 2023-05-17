@@ -1,4 +1,4 @@
-import org.foo.*
+import org.foo.StageGenerator
 
     
 def call() {
