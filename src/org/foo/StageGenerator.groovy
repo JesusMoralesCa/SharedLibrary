@@ -6,7 +6,7 @@ class StageGenerator {
         def yaml = new Yaml().parseText(yamlContent)
         def stages = yaml.stages
         
-        stage.each { stage ->
+        stages.each { stage ->
             stage(stage.stage) {
                 steps {
                     stage.steps.each { step ->
