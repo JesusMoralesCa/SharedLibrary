@@ -19,14 +19,8 @@ class StageGenerator {
   static createStage(stageName, steps) {
       steps.each { step ->
         step
-        executeStep(step)
+        
       }
     }
-  
-
-  static executeStep(step) {
-    // Implementar la lógica para ejecutar el paso específico
-    println "Executing step: $step"
-    // ...
-  }
+ 
 }
