@@ -2,8 +2,8 @@ package org.foo
 
 class StageGenerator {
   def generateStages(config) {
-        def yaml = new Yaml().parseText(yamlContent)
-        def stages = yaml.stages
+        def pipelineConfig = readYaml file: config
+        def stages = pipelineConfig.stages
         
         stages.each { stage ->
             stage(stage.stage) {
