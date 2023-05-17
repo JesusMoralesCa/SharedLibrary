@@ -3,7 +3,7 @@ package org.foo
 class StageGenerator {
   static generateStages(config) {
     def stages = []
-
+    
     config.stage.each { stageConfig ->
       def stageName = stageConfig.stage
       def steps = stageConfig.steps
