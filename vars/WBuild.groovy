@@ -10,7 +10,7 @@ def call() {
 
         def pipelineConfig = readYaml file: 'Java/pipeline.yaml'
         checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/JesusMoralesCa/BuildMaven.git']])
-        def stages = StageGenerator.generateStages(pipelineConfig)
+        def stages = org.foo.StageGenerator.generateStages(pipelineConfig)
         
         
     } else if (file['tecnology'] == 'node') {
