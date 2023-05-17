@@ -2,9 +2,9 @@ package org.foo
 
 class StageGenerator {
   def generateStages(config) {
-        def pipelineConfig = readYaml file: config
-        def stages = pipelineConfig.stages
         
+        def stages = config.stages
+    return{
         stages.each { stage ->
             stage(stage.stage) {
                 steps {
@@ -18,4 +18,10 @@ class StageGenerator {
             }
         }
     }
+  }
+  
+  
+  
+  
+  
 }
