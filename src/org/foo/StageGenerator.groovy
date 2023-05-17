@@ -4,7 +4,7 @@ class StageGenerator {
   def generateStages(config) {
         
         def stages = config.stages
-        /*stages.each { stage ->
+        stages.each { stage ->
             stage(stage.stage) {
                 steps {
                     stage.steps.each { step ->
@@ -15,10 +15,8 @@ class StageGenerator {
                     }
                 }
             }
-        }*/
-      
-
-  
-  
+        }
   }
 }
+
+return this
