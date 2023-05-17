@@ -1,18 +1,20 @@
 package org.foo
 
+import groovy.lang.Closure
+
 class Stage {
 
-    def createStage(String stageName, String functionName) {
+    def createStage(String stageName, Closure fun) {
         stage(stageName) {
             steps {
                 script {
-                    functionName
+                    fun.call()
                 }
             }
         }
     }
 
-    def run(String stageName, String functionName) {
-        createStage(stageName, functionName)
+    void run(String stageName, Closure fun) {
+        createStage(stageName, fun)
     }
 }
