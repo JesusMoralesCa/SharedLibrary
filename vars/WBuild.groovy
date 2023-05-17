@@ -12,20 +12,10 @@ def call() {
         checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/JesusMoralesCa/BuildMaven.git']])
         for (stageConfig in pipelineConfig.stages) {
             def stageName = stageConfig.stage
-            stage(stageName) {
-             
-                
-                        script {
-                            for (stepName in stageConfig.steps) {
-                                def objet = new srcObject()
-                                object.script(stepName)
-                                build.script()
-                                echo "Se ha ejecutado paso: ${stepName}"
-                            }
-                        }
-                    
-                
-            }
+            def stepName = stageConfig.steps
+            def build = new Stage()
+            build.run(stageName, stepName)
+            
         }
     } else if (file['tecnology'] == 'node') {
         def pipelineConfig = readYaml file: 'Node/pipeline.yaml'
