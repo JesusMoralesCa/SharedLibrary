@@ -13,7 +13,7 @@ def call() {
         for (stageConfig in pipelineConfig.stages) {
             def stageName = stageConfig.stage
             def stepName = stageConfig.steps
-            def build = new Stage()
+            def build = new stage()
             build.run(stageName, stepName)
             
         }
