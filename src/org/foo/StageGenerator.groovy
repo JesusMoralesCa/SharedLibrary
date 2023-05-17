@@ -1,9 +1,10 @@
 package org.foo
+import groovy.yaml.YamlSlurper
 
 class StageGenerator {
   def generateStages(config) {
-        //def yaml = new YamlSlurper().parse(new File(yamlPath).text)
-        def stages = config.stages
+        def yaml = new YamlSlurper().parse(new File(yamlPath).text)
+        def stages = yaml.stages
         
         stages.each { stage ->
             stage(stage.stage) {
