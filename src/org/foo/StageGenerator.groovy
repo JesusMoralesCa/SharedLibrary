@@ -1,7 +1,7 @@
 package org.foo
 
 class StageGenerator {
-  def generateStagesFromYaml(config) {
+  def generateStages(config) {
         //def yaml = new YamlSlurper().parse(new File(yamlPath).text)
         def stages = config.stages
         
