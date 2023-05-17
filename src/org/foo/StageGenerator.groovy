@@ -2,25 +2,19 @@ package org.foo
 
 class StageGenerator {
   static generateStages(config) {
-    def stages = []
+    def stage = []
     
-    config.stage.each { stageConfig ->
-      def stageName = stageConfig.stage
-      def steps = stageConfig.steps
-
-      def stage = createStage(stageName, steps)
-
-      stages.add(stage)
-    }
-
+    
+      for (stageConfig in config.stages) {
+        stage(stageConfig.stage) {
+          script{
+            for(step in config.steps){
+              step
+            }
+          }
+        stages.add(stage)
+        }
+  
     return stages
   }
-
-  static createStage(stageName, steps) {
-      steps.each { step ->
-        step
-        
-      }
-    }
- 
 }
