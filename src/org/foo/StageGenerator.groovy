@@ -7,10 +7,10 @@ package org.foo
         stages.each { stage ->
             stage(stage.stage) {
                 steps {
-                    stage.steps.each { //step ->
+                    stage.steps.each { step ->
                         script {
 
-                           // step()
+                            step()
                         }
                     }
                 }
