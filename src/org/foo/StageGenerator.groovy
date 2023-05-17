@@ -17,4 +17,5 @@ class StageGenerator {
   
     return stages
   }
+ }
 }
