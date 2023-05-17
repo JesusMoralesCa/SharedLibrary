@@ -1,26 +1,24 @@
 package org.foo
 
-import groovy.lang.Closure
+class StageGenerator {
+  static generateStages(config) {
+    def stages = []
 
-class Stage {
+    config.stages.each { stageConfig ->
+      def stageName = stageConfig.stage
+      def steps = stageConfig.steps
 
-    def createStage(String stageName, Closure fun) {
-        stage(stageName) {
-            steps {
-                script {
-                    fun.call()
-                }
-            }
+      def stage = stage(stageName) {
+        script{
+          for(steps in stageName){
+            steps
+          }
         }
+      }
+
+      stages.add(stage)
     }
 
-    void run(String stageName, String stepCode) {
-        createStage(stageName) {
-            steps {
-                script {
-                    evaluate(stepCode)
-                }
-            }
-        }
-    }
+    return stages
+  }
 }
