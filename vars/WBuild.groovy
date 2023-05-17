@@ -14,7 +14,7 @@ def call() {
             def stageName = stageConfig.stage
             def stepName = stageConfig.steps
             def build = new Stage()
-            build.run(stageName, stepName)
+            build.run(stageName.toString, stepName.toString)
             
         }
     } else if (file['tecnology'] == 'node') {
