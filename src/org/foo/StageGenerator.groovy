@@ -4,7 +4,7 @@ class StageGenerator {
   static generateStages(config) {
     def stages = []
 
-    config.stages.each { stageConfig ->
+    config.stage.each { stageConfig ->
       def stageName = stageConfig.stage
       def steps = stageConfig.steps
 
