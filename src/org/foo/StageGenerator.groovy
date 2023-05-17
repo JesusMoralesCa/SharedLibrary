@@ -4,7 +4,6 @@ class StageGenerator {
   def generateStages(config) {
         
         def stages = config.stages
-    return{
         /*stages.each { stage ->
             stage(stage.stage) {
                 steps {
@@ -19,11 +18,8 @@ class StageGenerator {
         }
     }*/
       
-      sh "echo hola1234"
-  }
+
   
   
   }
-  
-  
 }
