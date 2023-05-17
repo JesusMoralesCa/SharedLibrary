@@ -11,7 +11,7 @@ class StageGenerator {
       def stage = stage(stageName) {
         script {
           steps.each { step ->
-            // Llamar a la función según el nombre del paso
+            
             this."$step"()
           }
         }
