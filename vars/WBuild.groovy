@@ -14,12 +14,9 @@ def call() {
         
             for (stageName in pipelineConfig.stages) {
                 def stage = stageGenerate.getStage(stageName.stage.toString())
-                
-                if (stage) {
-                    stage(stage){
+                    stage(stageName){
                         stage.script()
                     }
-                }
             }
 
             
