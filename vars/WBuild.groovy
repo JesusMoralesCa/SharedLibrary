@@ -13,7 +13,7 @@ def call() {
             def stageGenerate = new StageGenerator()
         
             for (stageName in pipelineConfig.stages) {
-                stageGenerate.generateStages(stageName.toString())
+                stageGenerate.generateStages(stageName.stage.toString())
             }
         
             
