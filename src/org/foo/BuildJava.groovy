@@ -1,12 +1,15 @@
 package org.foo
+
 class BuildJava {
     def buildStage(String stageName) {
-        def stage = new Stage()
-        stage.setName(stageName)
+        def stage = [:]
+        stage.name = stageName
         
-        def steps = new Steps()
-        steps.sh("mvn -B -DskipTests clean package")
-        stage.setSteps(steps)
+        def steps = []
+        steps.add([
+            sh: "mvn -B -DskipTests clean package"
+        ])
+        stage.steps = steps
         
         return stage
     }
