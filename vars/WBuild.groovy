@@ -12,17 +12,9 @@ def call() {
             checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/JesusMoralesCa/BuildMaven.git']])
             def stageGenerate = new StageGenerator()
         
-            for (stageName in pipelineConfig.stages) {
-                def stage = stageGenerate.getStage(stageName.stage.toString())
-                    stage(stageName){
-                        step{
-                            
-                            if(stage){
-                                stage.script()
-                            }
-                        }    
-                    }
-            }
+             for (stageName in pipelineConfig.stages) {
+                generateStage(stageGenerate, stageName)
+             }
 
             
         
