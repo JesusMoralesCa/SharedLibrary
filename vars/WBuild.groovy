@@ -1,6 +1,6 @@
-@Grab('org.yaml:snakeyaml:1.17')
+//@Grab('org.yaml:snakeyaml:1.17')
 
-import org.yaml.snakeyaml.Yaml
+//import org.yaml.snakeyaml.Yaml
 import org.foo.StageGenerator
 
     
@@ -11,9 +11,9 @@ def call() {
     
     if (file['tecnology'] == 'java') {
 
-            //def yamlRead = readYaml file: 'Java/pipeline.yaml'
-            Yaml parser = new Yaml()
-            List pipelineConfig = parser.load(('https://github.com/JesusMoralesCa/pipeline-template.git/Java/pipeline.yaml' as File).text)
+            List yamlRead = readYaml file: 'Java/pipeline.yaml'
+            //Yaml parser = new Yaml()
+            //List pipelineConfig = parser.load(('https://github.com/JesusMoralesCa/pipeline-template.git/Java/pipeline.yaml' as File).text)
 
 
         
