@@ -16,7 +16,7 @@ class StageGenerator {
     
     
         def generateStage(stageName) {
-        stage(stageName) {
+        getStage(stageName) {
             step {
                 script {
                     def stage = getStage(stageName)
