@@ -12,7 +12,7 @@ class StageGenerator {
         } catch (ClassNotFoundException ex) {
             println("No se ha encontrado la stage")
         }
-       def stage = objectInstance.buildStage(stageClassName)
+       def stageBuilded = objectInstance.buildStage(stageClassName)
         
         return stage
     } 
