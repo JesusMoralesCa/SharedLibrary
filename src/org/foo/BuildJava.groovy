@@ -1,8 +1,8 @@
 package org.foo
 
-    def script() {
+class BuildJava{
+        def execute() {
         sh "mvn -B -DskipTests clean package"
     }
-    
-return this
+}
 
