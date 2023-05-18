@@ -13,17 +13,4 @@ class StageGenerator {
         }
         return objectInstance
     } 
-    
-    
-        def generateStage(stageName) {
-        getStage(stageName) {
-            step {
-                script {
-                    def stage = getStage(stageName)
-                    stage.script()
-                }
-            }
-        }
-    }
-    
 }
