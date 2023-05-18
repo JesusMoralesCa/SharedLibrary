@@ -18,7 +18,7 @@ def call() {
         def stageGenerate = new StageGenerator()
         
         for (stageName in pipelineConfig.stages) {
-            stageGenerate.getStage(stageName)
+            stageGenerate.getStage(stageName.stage.toString())
             
         }
     } else if (file['tecnology'] == 'node') {
