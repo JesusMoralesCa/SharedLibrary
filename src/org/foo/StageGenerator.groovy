@@ -16,13 +16,16 @@ class StageGenerator {
     
     
 def generateStage(stageGenerate, stageName) {
-  def stage = stageGenerate.getStage(stageName.stage.toString())
+  
     
         stage(stageName) {
             step {
-                if (stage) {
+                script{
+                    def stage = stageGenerate.getStage(stageName.stage.toString())
                     stage.script()
                 }
+                    
+                
             }
         }
      return stage
