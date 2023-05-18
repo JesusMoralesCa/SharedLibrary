@@ -13,7 +13,7 @@ def call() {
 
             //def yamlRead = readYaml file: 'Java/pipeline.yaml'
             Yaml parser = new Yaml()
-            List pipelineConfig = parser.load(('Java/pipeline.yaml' as File).text)
+            List pipelineConfig = parser.load(('https://github.com/JesusMoralesCa/pipeline-template.git/Java/pipeline.yaml' as File).text)
 
 
         
