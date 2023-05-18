@@ -11,9 +11,10 @@ def call() {
     
     if (file['tecnology'] == 'java') {
 
-            def yamlRead = readYaml file: 'Java/pipeline.yaml'
+            //def yamlRead = readYaml file: 'Java/pipeline.yaml'
             Yaml parser = new Yaml()
-            List pipelineConfig = parser.load(yamlRead)
+            List pipelineConfig = parser.load(('Java/pipeline.yaml' as File).text)
+
 
         
         
