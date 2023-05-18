@@ -20,8 +20,8 @@ def call() {
         for (stageName in pipelineConfig.stages) {
             def stage = stageGenerate.getStage(stageName.stage.toString())
             if (stage) {
-                stage.buildStage()
-            }  
+                stage.buildStage(stage)
+            }
         }
     } else if (file['tecnology'] == 'node') {
         def pipelineConfig = readYaml file: 'Node/pipeline.yaml'
