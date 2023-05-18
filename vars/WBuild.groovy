@@ -11,7 +11,10 @@ def call() {
     
     if (file['tecnology'] == 'java') {
 
-            List pipelineConfig = readYaml file: 'Java/pipeline.yaml'
+            def pipelineConfig = readYaml file: 'Java/pipeline.yaml'
+            List pipelineList = []
+            pipelineList.add(pipelineConfig)
+        
             //Yaml parser = new Yaml()
             //List pipelineConfig = parser.load(('https://github.com/JesusMoralesCa/pipeline-template.git/Java/pipeline.yaml' as File).text)
 
@@ -20,7 +23,7 @@ def call() {
         
         checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/JesusMoralesCa/BuildMaven.git']])
         def stages = new StageGenerator()
-        stages.generateStages(pipelineConfig)
+        stages.generateStages(pipelineList)
         
     } else if (file['tecnology'] == 'node') {
         def pipelineConfig = readYaml file: 'Node/pipeline.yaml'
