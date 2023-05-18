@@ -21,7 +21,7 @@ def call() {
             
             def stage = stageGenerate.getStage(stageName.stage.toString())
             if (stage) {
-                        def stage = stageGenerator.getStage(stageName.stage.toString())
+                        
                         stage.buildStage()
             }
         }
