@@ -12,24 +12,5 @@ class StageGenerator {
             println("No se ha encontrado la stage")
         }
         return objectInstance
-    }
-    
-    
-def generateStage(stageGenerate, stageName) {
-  
-    
-        stage(stageName) {
-            step {
-                script{
-                    def stage = stageGenerate.getStage(stageName.stage.toString())
-                    stage.script()
-                }
-                    
-                
-            }
-        }
-     return stage
-    }
-
-    
+    } 
 }
