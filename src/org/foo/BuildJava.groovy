@@ -1,4 +1,6 @@
 package org.foo
+@Grab('org.jenkins-ci.plugins:pipeline-model-definition:1.8.4')
+@Grab('org.jenkins-ci.plugins:workflow-basic-steps:2.23')
 import org.jenkinsci.plugins.pipeline.modeldefinition.model.Stage
 import org.jenkinsci.plugins.pipeline.modeldefinition.model.Steps
 
