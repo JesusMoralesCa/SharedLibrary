@@ -14,7 +14,7 @@ def call() {
         
             for (stageName in pipelineConfig.stages) {
                 def nombre = stageName.stage.toString()
-                stageGenerate.generateStages(nombre)
+                stageGenerate.getStage(nombre)
             }
         
             
