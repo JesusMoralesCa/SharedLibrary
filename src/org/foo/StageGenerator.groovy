@@ -1,7 +1,7 @@
 package org.foo
 
 
-  def generateStages(config) {
+  def generateStages(List config) {
         
         def stages = config.stages
         stages.each { stage ->
