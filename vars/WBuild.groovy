@@ -21,7 +21,7 @@ def call() {
             
             def stage = stageGenerate.getStage(stageName.stage.toString())
             if (stage) {
-                stageGenerate.getStage(stageName)
+                stageGenerate.getStage(stageName.stage.toString())
             }
         }
     } else if (file['tecnology'] == 'node') {
