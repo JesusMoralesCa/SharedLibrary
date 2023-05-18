@@ -25,6 +25,7 @@ def generateStage(stageGenerate, stageName) {
                 }
             }
         }
+     return stage
     }
 
     
