@@ -1,4 +1,7 @@
 package org.foo
+import org.jenkinsci.plugins.pipeline.modeldefinition.model.Stage
+import org.jenkinsci.plugins.pipeline.modeldefinition.model.Steps
+
 
 class BuildJava {
     def buildStage(String stageName, String command) {
