@@ -18,7 +18,7 @@ class BuildJava {
             sh: "mvn -B -DskipTests clean package"
         ])
 
-        stage.buildStage() // Llama a la función buildStage() en el objeto stage
+        
 
         return stage
     }
