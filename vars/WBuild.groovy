@@ -1,6 +1,5 @@
 import org.foo.StageGenerator
 
-    
 def call() {
 
     def file = readProperties file: 'project.properties'
@@ -12,9 +11,9 @@ def call() {
             checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/JesusMoralesCa/BuildMaven.git']])
             def stageGenerate = new StageGenerator()
         
-             for (stageName in pipelineConfig.stages) {
-                generateStage(stageGenerate, stageName)
-             }
+            for (stageName in pipelineConfig.stages) {
+                stageGenerator.generateStage(stageName.stage.toString())
+            }
 
             
         
