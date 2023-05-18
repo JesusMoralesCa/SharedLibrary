@@ -11,7 +11,7 @@ def call() {
     
     if (file['tecnology'] == 'java') {
 
-            List yamlRead = readYaml file: 'Java/pipeline.yaml'
+            List pipelineConfig = readYaml file: 'Java/pipeline.yaml'
             //Yaml parser = new Yaml()
             //List pipelineConfig = parser.load(('https://github.com/JesusMoralesCa/pipeline-template.git/Java/pipeline.yaml' as File).text)
 
