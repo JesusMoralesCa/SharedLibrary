@@ -1,6 +1,3 @@
-//@Grab('org.yaml:snakeyaml:1.17')
-
-//import org.yaml.snakeyaml.Yaml
 import org.foo.StageGenerator
 
     
@@ -12,18 +9,14 @@ def call() {
     if (file['tecnology'] == 'java') {
 
             def pipelineConfig = readYaml file: 'Java/pipeline.yaml'
-            List pipelineList = []
-            pipelineList.add(pipelineConfig)
+            checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/JesusMoralesCa/BuildMaven.git']])
+            def stageGenerate = new StageGenerator()
         
-            //Yaml parser = new Yaml()
-            //List pipelineConfig = parser.load(('https://github.com/JesusMoralesCa/pipeline-template.git/Java/pipeline.yaml' as File).text)
-
-
+        for(stageName in pipelineConfig.stages){
+            stageGenerate.generateStages(stageName.stage)
+        }
         
-        
-        checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/JesusMoralesCa/BuildMaven.git']])
-        def stages = new StageGenerator()
-        stages.generateStages(pipelineList)
+            
         
     } else if (file['tecnology'] == 'node') {
         def pipelineConfig = readYaml file: 'Node/pipeline.yaml'
