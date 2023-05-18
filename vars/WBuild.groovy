@@ -11,9 +11,10 @@ def call() {
     
     if (file['tecnology'] == 'java') {
 
-        def yamlRead = readYaml file: 'Java/pipeline.yaml'
-        Yaml parser = new Yaml()
-        List pipelineConfig = parser.load(yamlRead.text)
+            def yamlRead = readYaml file: 'Java/pipeline.yaml'
+            Yaml parser = new Yaml()
+            List pipelineConfig = parser.load(yamlRead)
+
         
         
         checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/JesusMoralesCa/BuildMaven.git']])
