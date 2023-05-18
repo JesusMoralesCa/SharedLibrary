@@ -1,17 +1,15 @@
 package org.foo
 
 class StageGenerator {
-
-    def getStage(String stage){
-        
+    def getStage(String stage) {
         def objectInstance
         def stageClassName
 
-        try{
+        try {
             stageClassName = "${StageGenerator.class.packageName}.$stage"
-            objectInstance = Class.forName(stageClassName, true, Thread.currentThread().contextClassLoader)
-        } catch (ClassNotFoundException ex){
-            print ("No se ha encontrado la stage")
+            objectInstance = Class.forName(stageClassName, true, Thread.currentThread().contextClassLoader).newInstance()
+        } catch (ClassNotFoundException ex) {
+            println("No se ha encontrado la stage")
         }
         return objectInstance
     }
