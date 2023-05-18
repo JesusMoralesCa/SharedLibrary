@@ -15,6 +15,7 @@ def call() {
             for (stageName in pipelineConfig.stages) {
                 def nombre = stageName.stage.toString()
                 stageGenerate.getStage(nombre)
+                echo "hola ${nombre}"
             }
         
             
