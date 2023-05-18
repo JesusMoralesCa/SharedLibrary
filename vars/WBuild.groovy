@@ -9,15 +9,16 @@ def call() {
     if (file['tecnology'] == 'java') {
 
             def pipelineConfig = readYaml file: 'Java/pipeline.yaml'
-            checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/JesusMoralesCa/BuildMaven.git']])
+            //checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/JesusMoralesCa/BuildMaven.git']])
             def stageGenerate = new StageGenerator()
         
             for (stageName in pipelineConfig.stages) {
-                def nombre = stageName.stage.toString()
-                stageGenerate.getStage(nombre)
-                echo "hola ${nombre}"
+                def stage = stageGenerate.getStage(stageName.stage.toString())
+                if (stage) {
+                    stage.execute()
+                }
             }
-        
+
             
         
     } else if (file['tecnology'] == 'node') {
