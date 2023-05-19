@@ -8,7 +8,7 @@ def stages = [
 ]
 
   def createStage = new StageD()
-  StageD.stage.execute
+  StageD.stage.execute()
  
   
   
