@@ -7,11 +7,11 @@ class Stage {
     this.name = name
   }
 
-  def execute(Closure body) {
+  def execute() {
     stage(name) {
       steps {
         script {
-          body.call()
+          sh 'mvn clean install' // Paso 'mvn clean install'
         }
       }
     }
