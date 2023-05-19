@@ -1,6 +1,6 @@
 package org.foo
 
-class StageD {
+class Stage {
   String name
 
   Stage(String name) {
