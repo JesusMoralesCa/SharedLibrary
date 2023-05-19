@@ -3,7 +3,7 @@ import org.foo.*
 def call() {
   def jobs = ["JobA", "JobB", "JobC"]
   
-  def parallelStagesMap = new DinamicStage()
+ def parallelStagesMap = DinamicStage.generateParallelStages(jobs)
   
   parallelStagesMap(jobs)
 
