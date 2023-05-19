@@ -5,7 +5,7 @@ def call() {
   
  def parallelStagesMap = DinamicStage.generateParallelStages(jobs)
   
-  parallelStagesMap
+  parallelStagesMap()
 
 }
 return this
