@@ -3,7 +3,7 @@ package org.foo
 class BuildJava{
     String name
 
-    BuilJava(String name){
+    BuildJava(String name){
        this.name = name
     }
 
