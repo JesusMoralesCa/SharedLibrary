@@ -8,3 +8,4 @@ def call() {
   parallelStagesMap(jobs)
 
 }
+return this
