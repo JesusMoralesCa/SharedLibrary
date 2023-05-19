@@ -1,16 +1,16 @@
 package org.foo
 
-class BuildJava {
-    def buildStage(String stageName) {
-        def stage = [:]
-        stage.name = stageName
-        
-        def steps = []
-        steps.add([
-            sh: "mvn -B -DskipTests clean package"
-        ])
-        stage.steps = steps
-        
-        return stage
+class BuildJava{
+    String name
+
+    BuilJava(String name){
+       this.name = name
     }
+
+    def execute(Closure block){
+        sh("mvn clean package")
+        block.delegate = this
+        block.call()
+    }
+    
 }
