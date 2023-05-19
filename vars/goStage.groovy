@@ -1,19 +1,16 @@
 import org.foo.*
 
 def call() {
-  
-def createStage = new StageD()
-  
+  def createStage = new Stage()
+
   def stages = [
-    new Stage('Stage 1'),
-    new Stage('Stage 2')
+    new createStage('Stage 1'),
+    new createStage('Stage 2')
   ]
 
-  
-  createStage.execute()
- 
-  
-  
-  
+  for (stage in stages) {
+    stage.execute()
+  }
+
+  return this
 }
-return this
