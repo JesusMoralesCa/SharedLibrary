@@ -1,14 +1,14 @@
 package org.foo
 import org.foo.Stage
 
+class BuildJava {
+    String buildName
 
-class BuildJava{
-    String name
-    
     BuildJava(String name) {
-        this.name = name
-        def stageBuild = new Stage(name) {
+        this.buildName = name
+        def stageBuild = new Stage(buildName) {
             def process = "mvn -B -DskipTests clean package".execute()
         }
     }
 }
+
