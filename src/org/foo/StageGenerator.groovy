@@ -7,7 +7,7 @@ class StageGenerator {
 
         try {
             stageClassName = "${StageGenerator.class.packageName}.$stage"
-            objectInstance = Class.forName(stageClassName, true, Thread.currentThread().contextClassLoader)
+            objectInstance = Class.forName(stageClassName, true, Thread.currentThread().contextClassLoader).newInstance()
             
             
             
