@@ -8,7 +8,7 @@ class BuildJava {
         this.buildName = name
     }
 
-    def executeBuild() {
+    def execute() {
         def stageBuild = new Stage(buildName) {
             def process = "mvn -B -DskipTests clean package".execute()
         }
