@@ -15,4 +15,5 @@ class BuildJava {
             script.sh "mvn -B -DskipTests clean package"
         }
     
+    }
 }
