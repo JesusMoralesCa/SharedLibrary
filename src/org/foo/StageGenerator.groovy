@@ -9,10 +9,11 @@ class StageGenerator {
             stageClassName = "${StageGenerator.class.packageName}.$stage"
             objectInstance = Class.forName(stageClassName, true, Thread.currentThread().contextClassLoader)
             
+            
         } catch (ClassNotFoundException ex) {
             println("No se ha encontrado la stage")
         }
         
-        return stage
+        return objectInstance
     } 
 }
