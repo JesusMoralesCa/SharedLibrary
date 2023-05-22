@@ -19,7 +19,7 @@ def call() {
         
         for (stageName in pipelineConfig.stages) {
             //def stage = stageGenerate.getStage(stageName.stage.toString())
-            def stage = new BuildJava()
+            def stage = new BuildJava(BuildJava)
             stage.execute()
             
             
