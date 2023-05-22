@@ -3,7 +3,7 @@ package org.foo
 class StageGenerator {
     def getStage(String stage) {
         def objectInstance
-        String stageClassName
+        def stageClassName
 
         try {
             stageClassName = "${StageGenerator.class.packageName}.$stage"
