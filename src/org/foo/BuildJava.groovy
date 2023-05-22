@@ -4,7 +4,9 @@ import org.foo.Stage
 class BuildJava {
     String buildName = "buildJava"
 
-
+    BuildJava(String name) {
+        this.buildName = name
+    }
 
     def execute() {
         def stageBuild = new Stage(buildName) {
