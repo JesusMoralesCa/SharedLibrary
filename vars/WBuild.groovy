@@ -15,7 +15,7 @@ def call() {
             extensions: [],
             userRemoteConfigs: [[url: 'https://github.com/JesusMoralesCa/BuildMaven.git']]
         )
-        def stageGenerate = new StageGenerator()
+        def stageGenerate = new StageGenerator(this)
         
         for (stageName in pipelineConfig.stages) {
             def stageB = stageGenerate.getStage(stageName.stage.toString())
