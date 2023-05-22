@@ -10,7 +10,7 @@ class BuildJava {
 
     def execute() {
         def stageBuild = new Stage(buildName) {
-            def process = "mvn -B -DskipTests clean package"
+            def process = "mvn -B -DskipTests clean package".execute()
         }
     }
 }
