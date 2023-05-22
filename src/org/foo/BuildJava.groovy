@@ -1,5 +1,17 @@
 package org.foo
-import org.foo.Stage
+//import org.foo.Stage
+
+class Stage {
+  String name
+
+  Stage(String name, Closure body) {
+    this.name = name
+    body.delegate = this
+    body.call()
+  }
+}
+
+
 
 class BuildJava {
     String buildName = "buildJava"
