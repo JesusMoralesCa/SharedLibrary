@@ -2,15 +2,17 @@ package org.foo
 import org.foo.Stage
 
 class BuildJava {
-    String buildName
+    private final Script script
 
-    BuildJava(String name) {
-        this.buildName = name
+    BuildJava(Script script) {
+        this.script = script
     }
 
-    def execute() {
-        def stageBuild = new Stage(buildName, {
-            def process = "mvn -B -DskipTests clean package".execute()
-        })
-    }
+ 
+        void execute(String name) {
+        script.stage(name) {
+            script.echo "Triggering ${name} stage..."
+            script.sh "mvn -B -DskipTests clean package"
+        }
+    
 }
