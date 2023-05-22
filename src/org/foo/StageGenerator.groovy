@@ -16,7 +16,7 @@ class StageGenerator {
             stageClassName = "${StageGenerator.class.packageName}.$stage"
             script.echo("ClassName: ${stageClassName}")
             objectInstance = Class.forName(stageClassName, true, Thread.currentThread().contextClassLoader).newInstance()
-            
+            objectInstance.script = script
             
             
         } catch (ClassNotFoundException ex) {

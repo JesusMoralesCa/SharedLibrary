@@ -1,7 +1,11 @@
 package org.foo
 
 class BuildJava {
-    private final Script script
+    public Script script
+
+    BuildJava() {
+    }
+
 
     BuildJava(Script script) {
         this.script = script
