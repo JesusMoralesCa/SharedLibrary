@@ -14,7 +14,7 @@ class Stage {
 
 
 class BuildJava {
-    String buildName = "buildJava"
+    String buildName
 
     BuildJava(String name) {
         this.buildName = name
