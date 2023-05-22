@@ -1,5 +1,4 @@
 package org.foo
-import org.foo.Stage
 
 class BuildJava {
     private final Script script
