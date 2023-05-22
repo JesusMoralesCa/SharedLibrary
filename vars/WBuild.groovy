@@ -19,10 +19,7 @@ def call() {
         
         for (stageName in pipelineConfig.stages) {
             def stage = stageGenerate.getStage(stageName.stage.toString())
-            stage.execute {
-                    // Definir las acciones específicas de esta etapa
-                echo "Ejecutando etapa: ${stage.name}"
-            }
+            stage.build()
             
         }
     } else if (file['tecnology'] == 'node') {
