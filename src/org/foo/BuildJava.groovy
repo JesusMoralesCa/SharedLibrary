@@ -7,7 +7,7 @@ class BuildJava{
      BuildJava(String name){
        this.name = name
     }
-    void build{
+    void build() {
         def stage = new Stage(name) {
             sh "mvn -B -DskipTests clean package"
         }
