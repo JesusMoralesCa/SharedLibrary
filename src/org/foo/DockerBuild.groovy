@@ -5,7 +5,7 @@ class DockerBuild {
     public Script script
 
     DockerBuild() {
-        
+
     }
 
     DockerBuild(Script script) {
@@ -15,7 +15,7 @@ class DockerBuild {
         void execute(String name) {
         script.stage(name) {
             script.echo "Triggering ${name} stage..."
-            script.sh "docker build -t jesusmoralesc/docker-${env.image} ."
+            script.sh "docker build -t jesusmoralesc/docker-${file['imageName']} ."
         }    
     }
 }
