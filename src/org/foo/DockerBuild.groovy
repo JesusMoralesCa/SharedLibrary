@@ -15,7 +15,7 @@ class DockerBuild {
         void execute(String name) {
         script.stage(name) {
             script.echo "Triggering ${name} stage..."
-            script.sh "docker build -t jesusmoralesc/docker-Javamvn ."
+            script.sh "docker build -t jesusmoralesc/docker-javamvn ."
         }    
     }
 }
