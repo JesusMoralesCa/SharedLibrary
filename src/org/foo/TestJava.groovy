@@ -1,7 +1,11 @@
 package org.foo
 
 class TestJava {
-    private final Script script
+    public Script script
+
+    TestJava() {
+        
+    }
 
     TestJava(Script script) {
         this.script = script

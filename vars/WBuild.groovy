@@ -8,32 +8,18 @@ def call() {
         userRemoteConfigs: [[url: 'https://github.com/JesusMoralesCa/pipeline-template.git']]
     )
     
-    if (file['tecnology'] == 'java') {
-        def pipelineConfig = readYaml file: 'Java/pipeline.yaml'
+        def pipelineConfig = readYaml file: "${file['tecnology']}/pipeline.yaml"
         checkout scmGit(
             branches: [[name: '*/main']],
             extensions: [],
-            userRemoteConfigs: [[url: 'https://github.com/JesusMoralesCa/BuildMaven.git']]
+            userRemoteConfigs: [[url: "https://github.com/JesusMoralesCa/Build${file['tecnology']}.git"]]
         )
         def stageGenerate = new StageGenerator(this)
         
         for (stageName in pipelineConfig.stages) {
             def stageB = stageGenerate.getStage(stageName.stage.toString())
-            //def stage = new BuildJava(this)
-
             stageB.execute(stageName.stage.toString())
-            
-            
         }
-    } else if (file['tecnology'] == 'node') {
-        def pipelineConfig = readYaml file: 'Node/pipeline.yaml'
-        
-        for (stageConfig in pipelineConfig.stages) {
-            stage(stageConfig.stage) {
-                
-            }
-        }
-    }
 }
 
 return this

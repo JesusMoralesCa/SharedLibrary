@@ -2,7 +2,11 @@
 package org.foo
 
 class DockerBuild {
-    private final Script script
+    public Script script
+
+    DockerBuild() {
+        
+    }
 
     DockerBuild(Script script) {
         this.script = script
