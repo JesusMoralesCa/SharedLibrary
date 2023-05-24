@@ -3,7 +3,7 @@ package org.test
 import org.foo.StageGenerator
 import com.homeaway.devtools.jenkins.testing.JenkinsPipelineSpecification
 
-class StageGeneratorTest extends JenkinsPipelineSpecification {
+class StageGeneratorSpec extends JenkinsPipelineSpecification {
 
       def "Get instance"() {
         given:
