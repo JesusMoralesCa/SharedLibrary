@@ -11,7 +11,7 @@ class SonarqubeStage {
     void execute(String name) {
         script.stage(name) {
             script.echo "Triggering ${name} stage..."
-            script.withSonarQubeEnv("Sonarqube") {
+            script.withSonarQubeEnv("sonarqube") {
 
             def sonarProps = readProperties file: 'sonar-project.properties'
             script.sh "sonar-scanner -Dsonar.sources=${sonarProps.getProperty('sonar.sources')}"
