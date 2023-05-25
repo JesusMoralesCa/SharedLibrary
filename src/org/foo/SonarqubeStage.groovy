@@ -3,9 +3,6 @@ package org.foo
 class SonarqubeStage {
     public Script script
 
-    SonarqubeStage() {
-        
-    }
 
     SonarqubeStage(Script script, String sonarQubeEnv) {
         this.script = script
