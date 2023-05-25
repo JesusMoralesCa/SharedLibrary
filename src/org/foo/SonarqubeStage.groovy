@@ -4,7 +4,7 @@ class SonarqubeStage {
     public Script script
 
 
-    SonarqubeStage(Script script, String sonarQubeEnv) {
+    SonarqubeStage(Script script) {
         this.script = script
     }
 
