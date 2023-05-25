@@ -7,6 +7,9 @@ def call() {
         extensions: [],
         userRemoteConfigs: [[url: 'https://github.com/JesusMoralesCa/pipeline-template.git']]
     )
+
+    def sonarqube = new SonarqubeStage(this)
+    sonarqube.execute("Stage Sonarqube")
     
         def pipelineConfig = readYaml file: "${file['tecnology']}/pipeline.yaml"
         checkout scmGit(
