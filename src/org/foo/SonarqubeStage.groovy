@@ -19,8 +19,6 @@ class SonarqubeStage {
             script.readFile('sonar-project.properties') { propertiesContent ->
                 sonarProps.load(new StringReader(propertiesContent))
             }
-
-            def sonarProps = readProperties file: 'sonar-project.properties'
             script.sh "sonar-scanner -Dsonar.sources=${sonarProps.getProperty('sonar.sources')}"
             }
         }
