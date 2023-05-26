@@ -1,13 +1,13 @@
 import org.foo.*
 
 def call() {
-    def file = readProperties file: 'project.properties'
+    
     checkout scmGit(
         branches: [[name: '*/main']],
         extensions: [],
         userRemoteConfigs: [[url: 'https://github.com/JesusMoralesCa/pipeline-template.git']]
     )
-    
+        def file = readProperties file: 'project.properties'
         def pipelineConfig = readYaml file: "${file['tecnology']}/pipeline.yaml"
         checkout scmGit(
             branches: [[name: '*/main']],
