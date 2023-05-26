@@ -10,7 +10,7 @@ def call() {
 
     //def file2 = readProperties file: 'sonar-project.properties'
     def sonarqube = new SonarqubeStage(this)
-    sonarqube.execute("Stage Sonarqube", file2)
+    sonarqube.execute("Stage Sonarqube")
     
         def pipelineConfig = readYaml file: "${file['tecnology']}/pipeline.yaml"
         checkout scmGit(
