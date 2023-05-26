@@ -10,7 +10,7 @@ class SonarqubeStage {
         this.script = script
     }
 
-    void execute(String name, def file2) {
+    void execute(String name) {
         script.stage(name) {
             script.echo "Triggering ${name} stage..."
             script.withSonarQubeEnv("sonarqube") {
