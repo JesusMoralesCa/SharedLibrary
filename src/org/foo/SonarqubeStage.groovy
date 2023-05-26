@@ -15,10 +15,10 @@ class SonarqubeStage {
             script.echo "Triggering ${name} stage..."
             script.withSonarQubeEnv("sonarqube") {
 
-                def sonarProps = file2
+                //def sonarProps = file2
                 
 
-                script.sh "sonar-scanner -Dsonar.sources=${sonarProps.getProperty('sonar.sources')}"
+                script.sh "sonar-scanner -Dsonar.sources=src}"
             }
         }
     }

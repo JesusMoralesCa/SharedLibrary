@@ -8,7 +8,7 @@ def call() {
         userRemoteConfigs: [[url: 'https://github.com/JesusMoralesCa/pipeline-template.git']]
     )
 
-    def file2 = readProperties file: 'sonar-project.properties'
+    //def file2 = readProperties file: 'sonar-project.properties'
     def sonarqube = new SonarqubeStage(this)
     sonarqube.execute("Stage Sonarqube", file2)
     
