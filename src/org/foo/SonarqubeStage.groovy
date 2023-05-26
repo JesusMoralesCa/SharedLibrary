@@ -1,7 +1,5 @@
 package org.foo
 
-import java.util.Properties
-
 class SonarqubeStage {
     public Script script
 
@@ -9,14 +7,13 @@ class SonarqubeStage {
         this.script = script
     }
 
-    void execute(String name) {
+    void execute(String name, file propiedades) {
         script.stage(name) {
             script.echo "Triggering ${name} stage..."
             script.withSonarQubeEnv("sonarqube") {
-                def sonarProps = new Properties()
-                script.readFile(file: 'sonar-project.properties') { propertiesContent ->
-                    sonarProps.load(new StringReader(propertiesContent))
-                }
+
+                def sonarProps = readProperties file: 'sonar-project.properties'
+
                 script.sh "sonar-scanner -Dsonar.sources=${sonarProps.getProperty('sonar.sources')}"
             }
         }
