@@ -17,11 +17,12 @@ class SonarqubeStage {
         script.stage(name) {
             script.echo "Triggering ${name} stage..."
             script.withSonarQubeEnv("sonarqube") {
-                script.withEnv(sonarProps) {
-                    script.sh "SonarScanner/bin/sonar-scanner -Dsonar.projectKey=${sonarProps['sonar.projectKey']} -Dsonar.sources=${sonarProps['sonar.sources']} -Dsonar.language=${sonarProps['sonar.language']}"
+                script.withEnv(["SONARQUBE_SCANNER_PARAMS": sonarProps.collect { key, value -> "${key}=${value}" }.join(' ')]) {
+                    script.sh "SonarScanner/bin/sonar-scanner"
                 }
             }
         }
     }
 }
+
 
