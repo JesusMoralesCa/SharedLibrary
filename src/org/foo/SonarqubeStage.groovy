@@ -1,8 +1,5 @@
 package org.foo
 
-import java.util.Properties
-import java.io.FileInputStream
-
 class SonarqubeStage {
     public Script script
 
@@ -10,15 +7,19 @@ class SonarqubeStage {
         this.script = script
     }
 
-    void execute(String name, def file2) {
+    void execute(String name) {
+        def sonarProps = [
+            'sonar.projectKey': 'pipeline-template',
+            'sonar.sources': 'src,vars',
+            'sonar.language': 'groovy'
+        ]
+
         script.stage(name) {
             script.echo "Triggering ${name} stage..."
             script.withSonarQubeEnv("sonarqube") {
-
-                //def sonarProps = file2
-                
-
-                script.sh "sonar-scanner -Dsonar.sources=${sonarProps.getProperty('sonar.sources')}"
+                script.withEnv(sonarProps) {
+                    script.sh "sonar-scanner"
+                }
             }
         }
     }
