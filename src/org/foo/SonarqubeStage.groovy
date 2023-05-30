@@ -10,7 +10,7 @@ class SonarqubeStage {
     void execute(String name) {
         def sonarProps = [
             '-Dsonar.host.url=http://172.21.0.1:9000',
-            '-Dsonar.projectKey=pipeline-template',
+            '-Dsonar.projectKey=SonarqubeAnalisis',
             '-Dsonar.sources=src',
             '-Dsonar.language=groovy'
         ]
