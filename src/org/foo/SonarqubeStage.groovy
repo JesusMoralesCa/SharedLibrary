@@ -10,7 +10,7 @@ class SonarqubeStage {
     void execute(String name) {
         def sonarProps = [
             'sonar.projectKey': 'pipeline-template',
-            'sonar.sources': ['src', 'vars'],
+            'sonar.sources': 'src',
             'sonar.language': 'groovy'
         ]
 
@@ -18,9 +18,10 @@ class SonarqubeStage {
             script.echo "Triggering ${name} stage..."
             script.withSonarQubeEnv("sonarqube") {
                 script.withEnv(sonarProps) {
-                    script.sh "SonarScanner/bin/sonar-scanner -Dsonar.projectKey=${sonarProps['sonar.projectKey']} -Dsonar.sources=${sonarProps['sonar.sources'].join(',')}"
+                    script.sh "SonarScanner/bin/sonar-scanner -Dsonar.projectKey=${sonarProps['sonar.projectKey']} -Dsonar.sources=${sonarProps['sonar.sources']} -Dsonar.language=${sonarProps['sonar.language']}"
                 }
             }
         }
     }
 }
+
