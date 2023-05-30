@@ -22,7 +22,7 @@ def call() {
         }
 
         def sonarqubeStage = new SonarqubeStage(this)
-        sonarqubeStage.execute("Sonarqube Analisis", "${file['tecnology']}")
+        sonarqubeStage.execute("Sonarqube Analisis", ${file['tecnology']})
 
 }
 
