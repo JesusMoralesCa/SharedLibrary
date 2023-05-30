@@ -16,7 +16,7 @@ class SonarqubeStage {
 
         script.stage(name) {
             script.echo "Triggering ${name} stage..."
-            def scannerHome = tool 'SonarScanner'
+            def scannerHome = script.tool 'SonarScanner'
             script.withSonarQubeEnv("sonarqube") {
                     script.sh "${scannerHome}/bin/sonar-scanner"
                 
