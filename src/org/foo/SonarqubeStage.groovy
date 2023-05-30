@@ -15,12 +15,12 @@ class SonarqubeStage {
             'sonar.language': 'groovy'
         ]
 
-        script.stage(name, tecnology) {
+        script.stage(name) {
             script.echo "Triggering ${name} stage..."
             def scannerHome = script.tool 'SonarScanner'
 
 
-        if(${tecnology} == Maven){
+        if(tecnology == Maven){
                 def propertiesFile = script.newFile("sonar-project.properties")
                 propertiesFile.write("""
                     sonar.host.url=${sonarProps['sonar.host.url']}
