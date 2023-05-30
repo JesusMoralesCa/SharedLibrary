@@ -18,7 +18,7 @@ class SonarqubeStage {
             script.echo "Triggering ${name} stage..."
             script.withSonarQubeEnv("sonarqube") {
                 script.withEnv(sonarProps) {
-                    script.sh "SonarScanner/bin/sonar-scanner "
+                    script.sh "SonarScanner/bin/sonar-scanner -Dsonar.projectKey=${sonarProps['sonar.projectKey']} -Dsonar.sources=${sonarProps['sonar.sources']} -Dsonar.language=${sonarProps['sonar.language']}"
                 }
             }
         }
