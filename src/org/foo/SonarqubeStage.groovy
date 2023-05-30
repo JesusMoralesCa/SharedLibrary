@@ -19,7 +19,7 @@ void execute(String name) {
         script.stage(name) {
             script.echo "Triggering ${name} stage..."
             def scannerHome = script.tool 'SonarScanner'
-            script.withSonarQubeEnv(credentialsId: sonarProps['sonar.login'], installationName: 'SonarQube') {
+            script.withSonarQubeEnv(credentialsId: sonarProps['sonar.login'], installationName: 'sonarqube') {
                 script.withEnv(["SONAR_HOST_URL=${sonarProps['sonar.host.url']}", "SONAR_PROJECT_KEY=${sonarProps['sonar.projectKey']}", "SONAR_SOURCES=${sonarProps['sonar.sources']}", "SONAR_LANGUAGE=${sonarProps['sonar.language']}"]) {
                     script.sh "${scannerHome}/bin/sonar-scanner"
                 }
