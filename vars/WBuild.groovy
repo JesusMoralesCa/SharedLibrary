@@ -21,7 +21,7 @@ def call() {
             stageB.execute(stageName.stage.toString())
         }
 
-        SonarqubeStage sonarqubeStage = new SonarqubeStage(this)
+        def sonarqubeStage = new SonarqubeStage(this)
         sonarqubeStage.execute("Sonarqube Analisis", "${file['tecnology']}")
 
 }
