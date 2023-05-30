@@ -7,25 +7,35 @@ class SonarqubeStage {
         this.script = script
     }
 
-    void execute(String name) {
+    void execute(String name, String tecnology) {
         def sonarProps = [
             'sonar.host.url': 'http://172.21.0.1:9000',
             'sonar.login': 'squ_34a79036fb8a3e556be4c083e435e5cc9c523967',
             'sonar.projectKey': 'pipeline-template',
-            'sonar.sources': 'src',
             'sonar.language': 'groovy'
         ]
 
         script.stage(name) {
             script.echo "Triggering ${name} stage..."
             def scannerHome = script.tool 'SonarScanner'
+
+                def propertiesFile = script.newFile("sonar-project.properties")
+                propertiesFile.write("""
+                    sonar.host.url=${sonarProps['sonar.host.url']}
+                    sonar.projectKey=${sonarProps['sonar.projectKey']}"""
+                    if(tecnology == 'Maven') {
+                        """
+                        sonar.sources=src
+                        """
+                    }
+                    """
+                    sonar.sources=${sonarProps['sonar.sources']}
+                    sonar.language=${sonarProps['sonar.language']}
+                """.stripIndent())
+
+                
             script.withSonarQubeEnv() {
-                    script.sh "${scannerHome}/bin/sonar-scanner \
-                        -Dsonar.host.url=${sonarProps['sonar.host.url']} \
-                        -Dsonar.projectKey=${sonarProps['sonar.projectKey']} \
-                        -Dsonar.login=${sonarProps['sonar.login']} \
-                        -Dsonar.sources=${sonarProps['sonar.sources']} \
-                        -Dsonar.language=${sonarProps['sonar.language']}"
+                    script.sh "${scannerHome}/bin/sonar-scanner "
                 
             }
         }
