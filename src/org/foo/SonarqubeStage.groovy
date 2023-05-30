@@ -7,7 +7,7 @@ class SonarqubeStage {
         this.script = script
     }
 
-    void execute(String name, tecnology) {
+    void execute(String name, String tecnology) {
         def sonarProps = [
             'sonar.host.url': 'http://172.21.0.1:9000',
             'sonar.login': 'squ_34a79036fb8a3e556be4c083e435e5cc9c523967',
