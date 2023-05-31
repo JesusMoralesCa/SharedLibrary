@@ -1,13 +1,13 @@
 package org.foo.Stages.Test
 
-class TestJava {
+class TestMaven {
     public Script script
 
-    TestJava() {
+    TestMaven() {
         
     }
 
-    TestJava(Script script) {
+    TestMaven(Script script) {
         this.script = script
     }
 

@@ -1,13 +1,13 @@
 package org.foo.Stages.Build
 
-class BuildJava {
+class BuildMaven {
     public Script script
 
-    BuildJava() {
+    BuildMaven() {
     }
 
 
-    BuildJava(Script script) {
+    BuildMaven(Script script) {
         this.script = script
     }
 
