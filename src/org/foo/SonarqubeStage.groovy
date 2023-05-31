@@ -27,6 +27,7 @@ class SonarqubeStage {
                 sonar.projectKey=pipeline-template
                 sonar.sources=src
                 sonar.language=groovy
+                sonar.java.binaries=target/classes
             ''')
         }
                 
