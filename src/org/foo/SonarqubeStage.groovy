@@ -21,7 +21,7 @@ class SonarqubeStage {
 
 
         if (tecnology == "Maven") {
-            def propertiesFile = new File("${WORKSPACE}/sonar-project.properties")
+            def propertiesFile = new File("sonar-project.properties")
             propertiesFile.createNewFile()
             propertiesFile.write('''
                 sonar.host.url=${sonarProps['sonar.host.url']}
