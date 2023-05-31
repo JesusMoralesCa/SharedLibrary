@@ -19,15 +19,21 @@ class SonarqubeStage {
             script.echo "Triggering ${name} stage..."
             def scannerHome = script.tool 'SonarScanner'
 
-
-        if (tecnology == "Maven") {
             def propertiesFile = new File("/var/jenkins_home/workspace/TareaSonarqube/sonar-project.properties")
             propertiesFile.createNewFile()
+
+        if (tecnology == "Maven") {
             propertiesFile.write('''
                 sonar.projectKey=pipeline-template
                 sonar.sources=src
-                sonar.language=groovy
                 sonar.java.binaries=target/classes
+            ''')
+        }
+        if (tecnology == "Node") {
+            propertiesFile.write('''
+                sonar.projectKey=pipeline-template
+                sonar.sources=./
+                sonar.language=js
             ''')
         }
                 
