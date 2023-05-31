@@ -21,7 +21,7 @@ class SonarqubeStage {
 
 
         if (tecnology == "Maven") {
-            def propertiesFile = new File("workspace/sonar-project.properties")
+            def propertiesFile = new File("/var/jenkins_home/workspace/TareaSonarqube/sonar-project.properties")
             propertiesFile.createNewFile()
             propertiesFile.write('''
                 sonar.projectKey=pipeline-template
