@@ -22,6 +22,7 @@ class SonarqubeStage {
                 sonar.projectKey=pipeline-template
                 sonar.sources=src
                 sonar.java.binaries=target/classes
+                sonar.sourceEncoding=UTF-8
             ''')
         }
         if (tecnology == "Node") {

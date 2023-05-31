@@ -17,7 +17,7 @@ def call() {
         def stageGenerate = new StageGenerator(this)
         
     for (stageName in pipelineConfig.stages) {
-        def stageB = stageGenerate.getStage(stageName.stage.toString())
+        def stageB = stageGenerate.getStage(stageName.stage.toString(), "${file['tecnology']}")
         stageB.execute(stageName.stage.toString())
     }
 

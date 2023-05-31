@@ -1,13 +1,13 @@
 package org.foo
 
-class NodeTestJest {
+class TestNode {
     public Script script
 
-    NodeTestJest() {
+    TestNode() {
 
     }
 
-    NodeTestJest(Script script) {
+    TestNode(Script script) {
         this.script = script
     }
 

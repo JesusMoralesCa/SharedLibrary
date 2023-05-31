@@ -1,13 +1,13 @@
 package org.foo
 
-class NodeInstall {
+class BuildNode {
     public Script script
 
-    NodeInstall() {
+    BuildNode() {
 
     }
 
-    NodeInstall(Script script) {
+    BuildNode(Script script) {
         this.script = script
     }
 
