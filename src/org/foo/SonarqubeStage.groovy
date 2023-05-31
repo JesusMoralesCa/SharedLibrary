@@ -25,7 +25,7 @@ class SonarqubeStage {
             propertiesFile.createNewFile()
             propertiesFile.write("""
                 sonar.host.url=${sonarProps['sonar.host.url']}
-                sonar.projectKey=${sonarProps['sonar.projectKey']}
+                sonar.projectKey=pipeline-template
                 sonar.sources=src
                 sonar.language=${sonarProps['sonar.language']}
             """)
