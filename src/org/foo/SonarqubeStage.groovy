@@ -29,7 +29,7 @@ class SonarqubeStage {
                 sonar.language=groovy
             ''')
         }
-
+        script.pwd
         script.ls
                 
             script.withSonarQubeEnv() {
