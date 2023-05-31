@@ -16,13 +16,13 @@ def call() {
         )
         def stageGenerate = new StageGenerator(this)
         
-        for (stageName in pipelineConfig.stages) {
-            def stageB = stageGenerate.getStage(stageName.stage.toString())
-            stageB.execute(stageName.stage.toString())
-        }
+    for (stageName in pipelineConfig.stages) {
+        def stageB = stageGenerate.getStage(stageName.stage.toString())
+        stageB.execute(stageName.stage.toString())
+    }
 
-        def sonarqubeStage = new SonarqubeStage(this)
-        sonarqubeStage.execute("Sonarqube Analisis", "${file['tecnology']}")
+    def sonarqubeStage = new SonarqubeStage(this)
+    sonarqubeStage.execute("Sonarqube Analisis", "${file['tecnology']}")
 
 }
 
