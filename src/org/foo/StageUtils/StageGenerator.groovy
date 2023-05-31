@@ -18,7 +18,7 @@ class StageGenerator {
             objectInstance = Class.forName(stageClassName, true, Thread.currentThread().contextClassLoader).newInstance()
             objectInstance.script = script
 
-            if (!objectInstance) {
+            if (!objectInstance.exists) {
             
                 try {
                     stageClassName = "org.foo.Stages.$stage.$stage"
