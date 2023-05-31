@@ -1,4 +1,4 @@
-import org.foo.Stages.StageUtils.*
+import org.foo.StageUtils.*
 import org.foo.Stages.CodeScan.*
 
 def call() {
