@@ -16,11 +16,12 @@ class StageGenerator {
 
             script.echo("ClassName: ${stageClassName}")
             objectInstance = Class.forName(stageClassName, true, Thread.currentThread().contextClassLoader).newInstance()
-                    if (!Class.forName(stageClassName, true, Thread.currentThread()) {
-                        stageClassName = "org.foo.Stages.$stage.$stage"
-                        objectInstance = Class.forName(stageClassName, true, Thread.currentThread().contextClassLoader).newInstance()
 
-                    }
+            if(!Class.forName(stageClassName, true, Thread.currentThread().contextClassLoader)){
+                stageClassName = "org.foo.Stages.$stage.$stage"
+                objectInstance = Class.forName(stageClassName, true, Thread.currentThread().contextClassLoader).newInstance() 
+            }
+
             objectInstance.script = script
 
         } catch (ClassNotFoundException ex) {
