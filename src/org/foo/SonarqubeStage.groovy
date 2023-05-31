@@ -13,7 +13,8 @@ class SonarqubeStage {
             script.echo "Triggering ${name} stage..."
             def scannerHome = script.tool 'SonarScanner'
 
-            def propertiesFile = new File("/var/jenkins_home/workspace/TareaSonarqube/sonar-project.properties")
+
+            def propertiesFile = new File("${script.env.WORKSPACE}/sonar-project.properties")
             propertiesFile.createNewFile()
 
         if (tecnology == "Maven") {
