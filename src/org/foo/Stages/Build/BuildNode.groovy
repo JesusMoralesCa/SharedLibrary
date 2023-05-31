@@ -1,4 +1,4 @@
-package org.foo
+package org.foo.Stages.Build
 
 class BuildNode {
     public Script script

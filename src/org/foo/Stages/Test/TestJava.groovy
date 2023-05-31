@@ -1,4 +1,4 @@
-package org.foo
+package org.foo.Stages.Test
 
 class TestJava {
     public Script script

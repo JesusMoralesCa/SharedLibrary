@@ -1,4 +1,4 @@
-package org.foo
+package org.foo.Stages.CodeScan
 
 class SonarqubeStage {
     public Script script

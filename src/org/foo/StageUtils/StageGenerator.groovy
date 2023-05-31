@@ -1,4 +1,4 @@
-package org.foo
+package org.foo.StageUtils
 
 class StageGenerator {
 

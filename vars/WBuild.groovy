@@ -15,14 +15,14 @@ def call() {
             extensions: [],
             userRemoteConfigs: [[url: "https://github.com/JesusMoralesCa/Build${file['tecnology']}.git"]]
         )
-        def stageGenerate = new StageUtils/StageGenerator(this)
+        def stageGenerate = new StageGenerator(this)
         
     for (stageName in pipelineConfig.stages) {
         def stageB = stageGenerate.getStage(stageName.stage.toString(), "${file['tecnology']}")
         stageB.execute(stageName.stage.toString())
     }
 
-    def sonarqubeStage = new CodeScan/SonarqubeStage(this)
+    def sonarqubeStage = new SonarqubeStage(this)
     sonarqubeStage.execute("Sonarqube Analisis", "${file['tecnology']}")
 
 }

@@ -1,5 +1,5 @@
 //         credentials('docker-hub-jesusmoralesc')
-package org.foo
+package org.foo.Stages.DockerBuild
 
 class DockerBuild {
     public Script script
