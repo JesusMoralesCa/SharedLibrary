@@ -21,7 +21,7 @@ class SonarqubeStage {
 
 
         if (tecnology == "Maven") {
-            def propertiesFile = new File("sonar-project.properties")
+            def propertiesFile = new File("${WORKSPACE}/sonar-project.properties")
             propertiesFile.createNewFile()
             propertiesFile.write('''
                 sonar.projectKey=pipeline-template
@@ -29,8 +29,6 @@ class SonarqubeStage {
                 sonar.language=groovy
             ''')
         }
-        script.pwd
-        script.ls
                 
             script.withSonarQubeEnv() {
                     script.sh "${scannerHome}/bin/sonar-scanner "
