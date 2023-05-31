@@ -17,7 +17,7 @@ class StageGenerator {
             script.echo("ClassName: ${stageClassName}")
             objectInstance = Class.forName(stageClassName, true, Thread.currentThread().contextClassLoader).newInstance()
 
-            if(!Class.forName(stageClassName, true, Thread.currentThread().contextClassLoader)){
+            if(!Class.forName(stageClassName, true, Thread.currentThread().contextClassLoader).newInstance()){
                 stageClassName = "org.foo.Stages.$stage.$stage"
                 objectInstance = Class.forName(stageClassName, true, Thread.currentThread().contextClassLoader).newInstance() 
             }
