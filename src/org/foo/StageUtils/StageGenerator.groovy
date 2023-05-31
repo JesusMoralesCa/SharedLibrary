@@ -13,7 +13,7 @@ class StageGenerator {
         def stageClassName
 
         try {
-            stageClassName = "${StageGenerator.class.packageName}.$stage.$stage$Technology"
+            stageClassName = "org.foo.Stages.$stage.$stage$Technology"
 
             script.echo("ClassName: ${stageClassName}")
             objectInstance = Class.forName(stageClassName, true, Thread.currentThread().contextClassLoader).newInstance()
@@ -27,10 +27,10 @@ class StageGenerator {
         if (!objectInstance) {
             
             try {
-                stageClassName = "${StageFactory.class.packageName}.$stage.$stage"
+                stageClassName = "org.foo.Stages.$stage.$stage"
                 objectInstance = Class.forName(stageClassName, true, Thread.currentThread().contextClassLoader)
             } catch (ClassNotFoundException ex) {
-                print("WARN: Is not possible to get the needed Stage")
+                script.echo("No se ha encontrado la stage por segunda vez")
             }
         }
 
