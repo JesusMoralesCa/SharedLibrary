@@ -30,7 +30,7 @@ class SonarqubeStage {
             ''')
         }
 
-
+        script.ls
                 
             script.withSonarQubeEnv() {
                     script.sh "${scannerHome}/bin/sonar-scanner "
