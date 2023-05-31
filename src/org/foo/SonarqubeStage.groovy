@@ -34,6 +34,7 @@ class SonarqubeStage {
                 sonar.projectKey=pipeline-template
                 sonar.sources=./
                 sonar.language=js
+                sonar.sourceEncoding=UTF-8
             ''')
         }
                 
