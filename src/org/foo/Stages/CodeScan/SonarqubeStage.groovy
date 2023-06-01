@@ -19,7 +19,7 @@ class SonarqubeStage {
 
         if (tecnology == "Maven") {
             propertiesFile.write('''
-                sonar.projectKey=pipeline-template
+                sonar.projectKey=MavenAnalysis
                 sonar.sources=src
                 sonar.java.binaries=target/classes
                 sonar.sourceEncoding=UTF-8
@@ -27,7 +27,7 @@ class SonarqubeStage {
         }
         if (tecnology == "Node") {
             propertiesFile.write('''
-                sonar.projectKey=pipeline-template
+                sonar.projectKey=NodeAnalysis
                 sonar.sources=./
                 sonar.language=js
                 sonar.sourceEncoding=UTF-8
