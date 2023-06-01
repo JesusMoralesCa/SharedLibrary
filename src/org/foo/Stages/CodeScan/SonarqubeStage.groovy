@@ -31,6 +31,7 @@ class SonarqubeStage {
                 sonar.sources=./
                 sonar.language=js
                 sonar.sourceEncoding=UTF-8
+                sonar.exclusions=node_modules/*
             ''')
         }
                 
