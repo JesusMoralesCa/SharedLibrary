@@ -7,7 +7,7 @@ class SonarqubeQualityGate {
         this.script = script
     }
 
-    void execute(String name, String tecnology) {
+    void execute(String name) {
         script.stage(name) {
             script.echo "Triggering ${name} stage..."
 

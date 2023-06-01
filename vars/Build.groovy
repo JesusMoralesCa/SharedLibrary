@@ -26,6 +26,10 @@ def call() {
     def sonarqubeStage = new SonarqubeStage(this)
     sonarqubeStage.execute("Sonarqube Analisis", "${file['tecnology']}")
 
+    def qualityGate = new SonarqubeQualityGate(this)
+    qualityGate.execute("Quality Gate")
+
+
 }
 
 return this
